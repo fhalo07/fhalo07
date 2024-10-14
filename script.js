@@ -26,13 +26,29 @@ async function fetchPokemon(pokemon) {
 
         const speciesData = await speciesResponse.json();
 
-        // Extract generation from species data
-        const generation = speciesData.generation.name.replace('generation-', 'Generation ').toUpperCase();
+        // Extract generation number from species data
+        const generation = getGenerationNumber(speciesData.generation.name);
 
         displayPokemon(data, generation);
     } catch (error) {
         pokemonInfo.innerHTML = `<p style="color: red;">${error.message}</p>`;
     }
+}
+
+// Function to convert generation name to a number
+function getGenerationNumber(generationName) {
+    const generationMap = {
+        'generation-i': 1,
+        'generation-ii': 2,
+        'generation-iii': 3,
+        'generation-iv': 4,
+        'generation-v': 5,
+        'generation-vi': 6,
+        'generation-vii': 7,
+        'generation-viii': 8,
+        'generation-ix': 9
+    };
+    return generationMap[generationName] || "Unknown";
 }
 
 // Display Pokémon information
@@ -57,3 +73,4 @@ searchBtn.addEventListener('click', () => {
         pokemonInfo.innerHTML = '<p style="color: red;">Please enter a Pokémon name or ID.</p>';
     }
 });
+
