@@ -64,3 +64,4 @@ searchBtn.addEventListener('click', () => {
         pokemonInfo.innerHTML = '<p style="color: red;">Please enter a Pokémon name or ID.</p>';
     }
 });
+
