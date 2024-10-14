@@ -17,22 +17,33 @@ async function fetchPokemon(pokemon) {
     try {
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon.toLowerCase()}`);
         if (!response.ok) throw new Error("Pokémon not found");
-        
+
         const data = await response.json();
-        displayPokemon(data);
+
+        // Fetch species data for generation information
+        const speciesResponse = await fetch(data.species.url);
+        if (!speciesResponse.ok) throw new Error("Species data not found");
+
+        const speciesData = await speciesResponse.json();
+
+        // Extract generation from species data
+        const generation = speciesData.generation.name.replace('generation-', 'Generation ').toUpperCase();
+
+        displayPokemon(data, generation);
     } catch (error) {
         pokemonInfo.innerHTML = `<p style="color: red;">${error.message}</p>`;
     }
 }
 
 // Display Pokémon information
-function displayPokemon(data) {
+function displayPokemon(data, generation) {
     pokemonInfo.innerHTML = `
         <h2>${data.name.charAt(0).toUpperCase() + data.name.slice(1)}</h2>
         <img src="${data.sprites.front_default}" alt="${data.name}" />
         <p><strong>Height:</strong> ${data.height / 10} m</p>
         <p><strong>Weight:</strong> ${data.weight / 10} kg</p>
         <p><strong>Types:</strong> ${data.types.map(type => type.type.name).join(', ')}</p>
+        <p><strong>Generation:</strong> ${generation}</p>
     `;
     tips.innerHTML = `<h3>Tips:</h3><p>${battleTips.join('</p><p>')}</p>`;
 }
