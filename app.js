@@ -42,6 +42,8 @@ function login() {
             message.textContent = "Login successful!";
             message.style.color = "green";
             console.log(userCredential.user);
+            // Redirect to the home page
+            window.location.href = "home.html"; // Change "home.html" to your home page URL
         })
         .catch((error) => {
             message.textContent = error.message;
