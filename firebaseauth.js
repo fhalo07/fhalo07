@@ -81,7 +81,7 @@ signIn.addEventListener("click", async (event) => {
 
     showMessage("Login is successful", "signInMessage");
     localStorage.setItem("loggedInUserId", user.uid);
-    window.location.href = "Lola_Hale.html";
+    window.location.href = "gallery.html";
   } catch (error) {
     const errorCode = error.code;
     if (errorCode === "auth/wrong-password") {

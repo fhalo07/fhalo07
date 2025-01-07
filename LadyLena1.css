@@ -1,0 +1,52 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.video-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+video {
+  width: 80%;
+  border: 2px solid #fff;
+  border-radius: 8px;
+}
+
+.profile-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-container img {
+  width: 150px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+}
+
+.volume-control {
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input[type="range"] {
+  width: 150px;
+  margin-top: 5px;
+}
