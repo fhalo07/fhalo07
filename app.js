@@ -9,6 +9,16 @@ const firebaseConfig = {
     measurementId: "G-VR7K6Y9QSS"
   };
 
+// Firebase configuration
+const firebaseConfig = {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_AUTH_DOMAIN",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_STORAGE_BUCKET",
+    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+    appId: "YOUR_APP_ID"
+};
+
 // Initialize Firebase
 const app = firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
@@ -24,26 +34,6 @@ function signup() {
             message.textContent = "Signup successful!";
             message.style.color = "green";
             console.log(userCredential.user);
-        })
-        .catch((error) => {
-            message.textContent = error.message;
-            message.style.color = "red";
-        });
-}
-
-// Login function
-function login() {
-    const email = document.getElementById('login-email').value;
-    const password = document.getElementById('login-password').value;
-    const message = document.getElementById('login-message');
-
-    auth.signInWithEmailAndPassword(email, password)
-        .then((userCredential) => {
-            message.textContent = "Login successful!";
-            message.style.color = "green";
-            console.log(userCredential.user);
-            // Redirect to the home page
-            window.location.href = "home.html"; // Change "home.html" to your home page URL
         })
         .catch((error) => {
             message.textContent = error.message;
