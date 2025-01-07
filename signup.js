@@ -15,4 +15,12 @@
   const analytics = getAnalytics(app);
   const auth = getAuth(app);
 
-const username = document.getElementById("username")
+const username = document.getElementById("username").value;
+const password = document.getElementById("password").value;
+
+const password = document.getElementById("submit");
+
+submit.addEventListener('click', function(event){
+event.preventDefault();
+alert("works")  
+})
