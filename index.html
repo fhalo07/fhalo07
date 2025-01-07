@@ -3,29 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
-    <link rel="stylesheet" href="hacker.css">
-    <script type="module src="signin.js"></script>
+    <title>Signup and Login with Firebase</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
 </head>
 <body>
+    <h1>Signup and Login with Firebase</h1>
 
-    <div class="login-container">
-        <h2>Login</h2>
-        <form action="#" method="POST">
-            <div class="input-group">
-                <label for="email">Email:</label>
-                <input type="text" id="email" name="email" required>
-            </div>
-            <div class="input-group">
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <button type="submit" class="login-btn">Login</button>
-            <div class="signup-link">
-                <p>Don't have an account? <a href="#">Sign up</a></p>
-            </div>
-        </form>
+    <!-- Signup Form -->
+    <div id="signup-form">
+        <h2>Signup</h2>
+        <input type="email" id="signup-email" placeholder="Email" required>
+        <input type="password" id="signup-password" placeholder="Password" required>
+        <button onclick="signup()">Sign Up</button>
+        <p class="message" id="signup-message"></p>
     </div>
 
+    <!-- Login Form -->
+    <div id="login-form">
+        <h2>Login</h2>
+        <input type="email" id="login-email" placeholder="Email" required>
+        <input type="password" id="login-password" placeholder="Password" required>
+        <button onclick="login()">Login</button>
+        <p class="message" id="login-message"></p>
+    </div>
+
+    <script src="app.js"></script>
 </body>
 </html>
