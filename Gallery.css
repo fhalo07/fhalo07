@@ -18,7 +18,7 @@ body {
 
  p {
     position: relative;
-    top: 10px; /* Moves down 10px */
+    top: 50px; /* Moves down 10px */
     left: 20px; /* Moves right 20px */
 }
   
