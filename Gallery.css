@@ -16,12 +16,18 @@ body {
     margin: 0;
   }
 
- p {
+ .text {
     position: absolute;
   top: 50px;
   left: 50px; 
 }
-  
+
+.text1 {
+    position: absolute;
+  top: 50px;
+  left: 50px; 
+}
+
   .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
