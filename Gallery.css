@@ -16,12 +16,6 @@ body {
     margin: 0;
   }
 
-p {
-  position: relative;
-  top: -500px;
-  left: 40px;
-}
-
   .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
