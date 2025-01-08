@@ -43,4 +43,11 @@ body {
     height: auto;
     display: block;
   }
+
+.gallery-item p {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #333;
+  text-align: center;
+}
   
