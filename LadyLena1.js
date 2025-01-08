@@ -49,7 +49,7 @@ volumeControl.addEventListener('input', () => {
     var hls = new Hls({
       debug: false,
     });
-    hls.loadSource("https://edge-hls.sagcoreedge.com/hls/174937216/master/174937216.m3u8");
+    hls.loadSource("https://edge-hls.doppiocdn.net/hls/48302294/master/48302294_480p.m3u8");
     hls.attachMedia(video);
 
     hls.on(Hls.Events.MEDIA_ATTACHED, function() {
