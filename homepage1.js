@@ -19,3 +19,15 @@ setInterval(checkStreamStatus, 1000);
 
 // Initial check in case the stream is already loaded and playing
 checkStreamStatus();
+
+const logoutButton = document.getElementById('logout');
+
+logoutButton.addEventListener('click', () => {
+    localStorage.removeItem('loggedInUserId');
+    signOut(auth)
+        .then(() => {
+            window.location.href = 'index.html';
+        })
+        .catch((error) => {
+            console.error('Error signing out:', error);
+        });
