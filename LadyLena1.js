@@ -1,11 +1,9 @@
 // Select elements
 const video = document.getElementById('video');
 const volumeControl = document.getElementById('volume');
-const profileContainer = document.getElementById('profile-container');
-const profileImage = document.getElementById('profile-image');
 
 // Stream URL (replace with your live stream URL)
-const streamUrl = "https://edge-hls.doppiocdn.net/hls/48302294/master/48302294_480p.m3u8;
+const streamUrl = "https://edge-hls.doppiocdn.net/hls/48302294/master/48302294_480p.m3u8";
 
 // Explicitly disable video controls
 video.controls = false;
@@ -34,48 +32,18 @@ if (Hls.isSupported()) {
       hls.loadSource(streamUrl);
     }
   });
+} else if (video.canPlayType("application/vnd.apple.mpegurl")) {
+  console.log("Native HLS support detected. Setting video source directly.");
+  video.src = streamUrl;
+  video.addEventListener("loadedmetadata", () => {
+    video.play().catch(err => console.error("Playback error:", err));
+  });
+} else {
+  console.error("HLS is not supported in this browser.");
+}
 
 // Volume control
 volumeControl.addEventListener('input', () => {
   video.volume = volumeControl.value;
   console.log("Volume set to:", video.volume);
 });
-  
-  var video = document.getElementById('video');
-  var fallbackImage = "https://static-cdn.strpst.com/avatars/a/a/d/aad0312020e9b20c57c6a6d7609018a2-full";  // Profile image URL
-"; // Replace with your image URL
-  
-  if (Hls.isSupported()) {
-    var hls = new Hls({
-      debug: false,
-    });
-    hls.loadSource("https://edge-hls.doppiocdn.net/hls/48302294/master/48302294_480p.m3u8");
-    hls.attachMedia(video);
-
-    hls.on(Hls.Events.MEDIA_ATTACHED, function() {
-      video.muted = false;
-      video.play();
-    });
-
-    hls.on(Hls.Events.ERROR, function(event, data) {
-      if (data.details === Hls.ErrorDetails.MANIFEST_LOAD_ERROR || 
-          data.details === Hls.ErrorDetails.FRAG_LOAD_ERROR) {
-        showFallbackImage();
-      }
-    });
-  } else {
-    showFallbackImage();
-  }
-
-  video.addEventListener('error', showFallbackImage);
-
-  function showFallbackImage() {
-    video.style.display = 'none';
-    var img = document.createElement('img');
-    img.src = fallbackImage;
-    img.alt = "Stream unavailable";
-    img.style.width = "100%";
-    img.style.height = "100%";
-    video.parentNode.insertBefore(img, video);
-  }
-
