@@ -17,9 +17,9 @@ body {
   }
 
  p {
-    position: relative;
-    top: 100px; 
-    left: 20px; 
+    position: absolute;
+  top: 50px;
+  left: 50px; 
 }
   
   .gallery {
