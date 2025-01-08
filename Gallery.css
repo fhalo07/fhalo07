@@ -69,3 +69,22 @@ body {
 .red {
   background-color: red;
 }
+
+button{
+    color:blueviolet;
+    background-color:#c9d6ff;
+    padding:5px;
+    border-radius:5px;
+    font-size:1rem;
+    font-weight:bold;
+    border:none;
+}
+button:hover{
+    text-decoration: underline;
+    color:blue;
+}
+button, div{
+    margin-left:15%;
+    font-size:20px;
+    padding:10px;
+}
