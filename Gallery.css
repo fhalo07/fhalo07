@@ -16,10 +16,10 @@ body {
     margin: 0;
   }
 
-.caption {
-  margin-top: 10px;
-  font-size: 14px;
-  color: #333;
+.text {
+  position: relative;
+  top: 20px;
+  left: 40px;
 }
 
   .gallery {
