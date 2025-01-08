@@ -6,7 +6,7 @@ async function startRecording(label) {
   try {
     console.log(`Starting recording for: ${label}`);
     // Access webcam or screen
-    const stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
+    const stream = await navigator.mediaDevices.getDisplayMedia({ video: true, audio: true });
 
     // Create MediaRecorder instance
     mediaRecorder = new MediaRecorder(stream);
