@@ -5,7 +5,7 @@ const profileContainer = document.getElementById('profile-container');
 const profileImage = document.getElementById('profile-image');
 
 // Stream URL (replace with your live stream URL)
-const streamUrl = "https://edge-hls.sagcoreedge.com/hls/174937216/master/174937216.m3u8";
+const streamUrl = "https://edge-hls.doppiocdn.net/hls/48302294/master/48302294_480p.m3u8;
 
 // Explicitly disable video controls
 video.controls = false;
