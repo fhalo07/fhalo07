@@ -5,7 +5,10 @@ const profileContainer = document.getElementById('profile-container');
 const profileImage = document.getElementById('profile-image');
 
 // Stream URL (replace with your live stream URL)
-const streamUrl = "https://edge-hls.doppiocdn.net/hls/104929672/master/104929672_480p.m3u8";
+const streamUrl = "https://edge-hls.sagcoreedge.com/hls/174937216/master/174937216.m3u8";
+
+// Profile Image URL (using the URL you provided)
+const profileImageUrl = "https://static-cdn.strpst.com/avatars/a/a/d/aad0312020e9b20c57c6a6d7609018a2-full";  // Profile image URL
 
 // Explicitly disable video controls
 video.controls = false;
@@ -33,7 +36,17 @@ if (Hls.isSupported()) {
       console.log("Network error - attempting to reload...");
       hls.loadSource(streamUrl);
     }
-  
+  });
+
+  // Detect if video stops and show profile image
+  video.addEventListener('pause', () => {
+    profileContainer.style.display = 'flex'; // Show profile image container
+    profileImage.src = profileImageUrl; // Set the profile image
+  });
+
+  video.addEventListener('play', () => {
+    profileContainer.style.display = 'none'; // Hide profile image container when video plays
+  });
 } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
   console.log("Native HLS support detected. Setting video source directly.");
   video.src = streamUrl;
@@ -48,11 +61,4 @@ if (Hls.isSupported()) {
 volumeControl.addEventListener('input', () => {
   video.volume = volumeControl.value;
   console.log("Volume set to:", video.volume);
-});
-
-// Show fallback if video stops playing due to other issues
-video.addEventListener('stalled', () => {
-  console.log("Video stalled. Showing fallback image.");
-  fallbackContainer.style.display = 'flex'; // Show fallback container
-  video.style.display = 'none'; // Hide video
 });
