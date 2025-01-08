@@ -18,8 +18,8 @@ body {
 
  p {
     position: relative;
-    top: 50px; /* Moves down 10px */
-    left: 20px; /* Moves right 20px */
+    top: 100px; 
+    left: 20px; 
 }
   
   .gallery {
