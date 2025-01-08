@@ -12,7 +12,7 @@
   </header>
   <main>
     <div class="gallery">
-      <a href="LadyLena1.html">
+      <a href="LadyLena1.html" onclick="startRecording('LadyLena1')">
         <img src="https://static-cdn.strpst.com/avatars/a/a/d/aad0312020e9b20c57c6a6d7609018a2-full
 " alt="Image 1">
       </a>
@@ -35,6 +35,14 @@
         <img src="image4.jpg" alt="Image 4">
       </a>
     </div>
-  </main>
+
+<div id="controls">
+      <button onclick="stopRecording()">Stop Recording</button>
+      <a id="download" style="display: none;" download="recording.webm">Download Recording</a>
+    </div>
+    </main>
+
+<script src="record.js"></script>
+  
 </body>
 </html>
