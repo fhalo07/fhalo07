@@ -16,6 +16,12 @@ body {
     margin: 0;
   }
 
+.caption {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #333;
+}
+
   .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
