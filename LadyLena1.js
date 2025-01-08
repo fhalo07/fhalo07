@@ -3,7 +3,7 @@ const video = document.getElementById('video');
 const volumeControl = document.getElementById('volume');
 
 // Stream URL (replace with your live stream URL)
-const streamUrl = "https://edge-hls.doppiocdn.net/hls/48302294/master/48302294_480p.m3u8";
+const streamUrl = "https://edge-hls.sagcoreedge.com/hls/175426067/master/175426067_480p.m3u8";
 
 // Explicitly disable video controls
 video.controls = false;
