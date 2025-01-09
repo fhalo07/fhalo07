@@ -19,3 +19,8 @@ setInterval(checkStreamStatus, 1000);
 
 // Initial check in case the stream is already loaded and playing
 checkStreamStatus();
+
+function toggleMenu() {
+  const menu = document.querySelector('.menu');
+  menu.classList.toggle('active');
+}
