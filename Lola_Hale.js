@@ -47,22 +47,3 @@ volumeControl.addEventListener('input', () => {
   video.volume = volumeControl.value;
   console.log("Volume set to:", video.volume);
 });
-
-const video = document.getElementById('video');
-
-    // Function to update the status in localStorage
-    function updateStreamStatus() {
-      if (video.paused || video.ended) {
-        // Stream is stopped
-        localStorage.setItem('streamStatus', 'stopped');
-      } else {
-        // Stream is active
-        localStorage.setItem('streamStatus', 'active');
-      }
-    }
-
-    // Update status every 1 second
-    setInterval(updateStreamStatus, 1000);
-
-    // Initial status check
-    updateStreamStatus();
