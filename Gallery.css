@@ -82,46 +82,44 @@ body {
   top: 0;
   left: 0;
 }
+
+.navbar .logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 20px; /* Space below the logo */
+}
+
 .navbar a {
   color: white;
   text-decoration: none;
   padding: 8px 16px;
+  display: block; /* Make links block elements for full-width clicks */
+  width: 100%;
 }
+
 .navbar a:hover {
   background-color: #575757;
   border-radius: 4px;
 }
-.navbar .logo {
-  font-size: 20px;
-  font-weight: bold;
-}
+
 .navbar .menu {
-  display: flex;
   list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 100%; /* Stretch menu to match navbar width */
 }
+
 .navbar .menu li {
-  margin: 0 10px;
+  width: 100%;
 }
+
 .navbar .toggle {
-  display: none;
-  font-size: 24px;
-  color: white;
-  cursor: pointer;
+  display: none; /* Hide toggle button for left-aligned navbar */
 }
+
 @media (max-width: 768px) {
-  .navbar .menu {
-    display: none;
-    flex-direction: column;
-    background-color: #333;
-    position: absolute;
-    top: 60px;
-    right: 20px;
-    width: 200px;
-  }
-  .navbar .menu.active {
-    display: flex;
-  }
-  .navbar .toggle {
-    display: block;
+  .navbar {
+    width: 150px; /* Smaller width for smaller screens */
   }
 }
