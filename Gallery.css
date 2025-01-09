@@ -72,54 +72,51 @@ body {
 
 .navbar {
   display: flex;
-  flex-direction: column; /* Stack items vertically */
-  align-items: flex-start; /* Align to the left */
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
   background-color: #333;
+  color: white;
   padding: 20px;
   height: 100vh; /* Full height of the viewport */
-  width: 200px; /* Fixed width */
-  position: fixed; /* Stay on the left of the screen */
+  width: 200px; /* Fixed width for the navbar */
+  position: fixed; /* Fix the navbar on the left */
   top: 0;
   left: 0;
 }
 
 .navbar .logo {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: bold;
   color: white;
-  margin-bottom: 20px; /* Space below the logo */
-}
-
-.navbar a {
-  color: white;
-  text-decoration: none;
-  padding: 8px 16px;
-  display: block; /* Make links block elements for full-width clicks */
-  width: 100%;
-}
-
-.navbar a:hover {
-  background-color: #575757;
-  border-radius: 4px;
+  margin-bottom: 20px;
 }
 
 .navbar .menu {
-  list-style-type: none;
+  list-style: none;
   padding: 0;
   margin: 0;
-  width: 100%; /* Stretch menu to match navbar width */
+  width: 100%; /* Ensure menu items take full width */
 }
 
 .navbar .menu li {
   width: 100%;
+  margin-bottom: 10px;
 }
 
-.navbar .toggle {
-  display: none; /* Hide toggle button for left-aligned navbar */
+.navbar .menu li a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  display: block; /* Makes the entire area clickable */
 }
 
-@media (max-width: 768px) {
-  .navbar {
-    width: 150px; /* Smaller width for smaller screens */
-  }
+.navbar .menu li a:hover {
+  background-color: #575757;
+  border-radius: 4px;
+}
+
+main {
+  margin-left: 220px; /* Create space for the navbar */
+  padding: 20px;
 }
