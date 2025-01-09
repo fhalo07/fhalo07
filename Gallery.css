@@ -72,10 +72,15 @@ body {
 
 .navbar {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column; /* Stack items vertically */
+  align-items: flex-start; /* Align to the left */
   background-color: #333;
-  padding: 10px 20px;
+  padding: 20px;
+  height: 100vh; /* Full height of the viewport */
+  width: 200px; /* Fixed width */
+  position: fixed; /* Stay on the left of the screen */
+  top: 0;
+  left: 0;
 }
 .navbar a {
   color: white;
