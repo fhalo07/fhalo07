@@ -69,3 +69,54 @@ body {
 .red {
   background-color: red;
 }
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 10px 20px;
+}
+.navbar a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 16px;
+}
+.navbar a:hover {
+  background-color: #575757;
+  border-radius: 4px;
+}
+.navbar .logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+.navbar .menu {
+  display: flex;
+  list-style-type: none;
+}
+.navbar .menu li {
+  margin: 0 10px;
+}
+.navbar .toggle {
+  display: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .navbar .menu {
+    display: none;
+    flex-direction: column;
+    background-color: #333;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    width: 200px;
+  }
+  .navbar .menu.active {
+    display: flex;
+  }
+  .navbar .toggle {
+    display: block;
+  }
+}
