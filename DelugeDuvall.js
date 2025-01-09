@@ -48,24 +48,21 @@ volumeControl.addEventListener('input', () => {
   console.log("Volume set to:", video.volume);
 });
 
-const statusCircle = document.getElementById('statusCircle');
+const video = document.getElementById('video');
 
-    // Function to check the stream status from localStorage
-    function checkStreamStatus() {
-      const status = localStorage.getItem('streamStatus');
-      if (status === 'active') {
-        // Stream is active
-        statusCircle.classList.remove('red');
-        statusCircle.classList.add('green');
-      } else {
+    // Function to update the status in localStorage
+    function updateStreamStatus() {
+      if (video.paused || video.ended) {
         // Stream is stopped
-        statusCircle.classList.remove('green');
-        statusCircle.classList.add('red');
+        localStorage.setItem('streamStatus', 'stopped');
+      } else {
+        // Stream is active
+        localStorage.setItem('streamStatus', 'active');
       }
     }
 
-    // Check the stream status every 1 second
-    setInterval(checkStreamStatus, 1000);
+    // Update status every 1 second
+    setInterval(updateStreamStatus, 1000);
 
-    // Initial check
-    checkStreamStatus();
+    // Initial status check
+    updateStreamStatus();
