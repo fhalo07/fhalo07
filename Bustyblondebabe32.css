@@ -61,6 +61,7 @@ input[type="range"] {
 .topnav {
   background-color: #333;
   overflow: hidden;
+  float: top;
 }
 
 /* Style the links inside the navigation bar */
