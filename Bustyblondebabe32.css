@@ -62,6 +62,9 @@ input[type="range"] {
   background-color: #333;
   overflow: hidden;
   position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }
 
 /* Style the links inside the navigation bar */
