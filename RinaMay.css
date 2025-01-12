@@ -2,22 +2,39 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   background-color: #000;
-  color: #FFF;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  color: #fff;
 }
 
 .video-container {
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 video {
-  width: 80%;
+  width: 50%;
   border: 2px solid #fff;
   border-radius: 8px;
+}
+
+.fallback-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: none; /* Hidden by default */
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.fallback-container img {
+  width: 450px;
+  border-radius: 50%;
+  margin-bottom: 20px;
 }
 
 .volume-control {
@@ -25,6 +42,11 @@ video {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.fallback-container p {
+  font-size: 1.2em;
+  color: #fff;
 }
 
 input[type="range"] {
