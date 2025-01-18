@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Stream Player</title>
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <link rel="stylesheet" href="BritishJuicyAva.css">
+</head>
+
+<body>
+
+<div class="topnav">
+      <a href="index.html">Home</a>
+      <a href="#">Gallery</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+</div>
+  
+ <div class="video-container">
+    <video id="video" autoplay muted loop playsinline></video>
+    <div class="volume-control">
+      <label for="volume">Volume:</label>
+      <input id="volume" type="range" min="0" max="1" step="0.1" value="0.5">
+    </div>
+  </div>
+  
+  <script src="BritishJuicyAva.js"></script>
+
+</body>
+</html>
